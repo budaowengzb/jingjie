@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.demo.dao.ItemOrderBeanMapper" >
+  <insert id="addItemOrder" parameterType="com.spring.demo.bean.ItemOrderBean" useGeneratedKeys="true" keyProperty="id">
+  insert into item_order(period, expect_price, attachment, ana_soft, need_paper,
+  qq, tel, descri, mark, createtime, updatetime) values(#{period}, #{expect_price},
+   #{attachment}, #{ana_soft}, #{need_paper},  #{qq}, #{tel}, #{descri}, #{mark}, 
+   #{createtime}, #{updatetime})
+  </insert>
+  
+
+  <resultMap id="BaseResultMap" type="com.spring.demo.bean.ItemOrderBean" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="attachment" property="attachment" jdbcType="VARCHAR" />
+    <result column="descri" property="descri" jdbcType="VARCHAR" />
+    <result column="updatetime" property="updatetime" jdbcType="INTEGER" />
+  </resultMap>
+  
+    <sql id="Base_Column_List" >
+    id, attachment, updatetime, descri
+  </sql>
+  
+  <select id="selectItemOrder" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from item_order
+    where status = #{status,jdbcType=INTEGER}
+  </select>
+
+</mapper>

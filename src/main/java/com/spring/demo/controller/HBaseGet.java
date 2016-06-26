@@ -4,7 +4,6 @@ package com.spring.demo.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,8 +21,6 @@ import com.spring.demo.service.HBaseGetServiceI;
  * @version
  * @see
  */
-@Controller
-@RequestMapping("/get")
 public class HBaseGet {
 
 

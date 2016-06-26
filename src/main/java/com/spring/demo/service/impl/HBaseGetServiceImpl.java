@@ -10,7 +10,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
 import com.spring.demo.bean.BaseCinemaconfigBean;
 import com.spring.demo.dao.BaseCinemaconfigBeanMapper;
@@ -27,7 +26,6 @@ import com.spring.demo.service.HBaseGetServiceI;
  * @version
  * @see
  */
-@Service("hBaseGetService")
 public class HBaseGetServiceImpl implements HBaseGetServiceI {
 
   @Value("${cinema_refund_type}")
